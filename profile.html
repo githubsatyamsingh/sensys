@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-    function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if(charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
         }
-        return true;
-    }
-    function validateEmail(email) {
-        return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(email);
-    }
+
+        function validateEmail(email) {
+            return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(email);
+        }
     </script>
 </head>
 
@@ -55,7 +56,7 @@
                     </ul>
                 </div>
                 <div>
-                    <p class="emp_contact"><a href="tel:+91 0123 456 789">+91 0123 456 789</a> <a href="mailto:satyam@gmail.com">satyam@gmail.com</a></p>
+                    <p class="emp_contact"><a href="tel:+91 0123456789">+91 0123456789</a> <a href="mailto:satyam@gmail.com">satyam@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -138,92 +139,92 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script>
-    //form field validation Start          
-    function valueChanged() {
-        if($('.other_skill').is(":checked")) $(".custom_box").show();
-        else $(".custom_box").hide();
-        $('#custom_skill_value').val("");
-    }
+        //form field validation Start          
+        function valueChanged() {
+            if ($('.other_skill').is(":checked")) $(".custom_box").show();
+            else $(".custom_box").hide();
+            $('#custom_skill_value').val("");
+        }
 
-    function profileValidate() { 
-        var fname = $('#fname').val();
-        var lname = $('#lname').val();
-        var mobile = $('#mobile').val();
-        var email = $('#email').val();
-        var dob = $('#dob').val();
-        var otherSkill = $('#custom_skill_value').val();
-        var address = $('#address').val();
-        var dateValue = (new Date(dob));
-        var ipYear = dateValue.getFullYear();
-        var currYear = new Date().getFullYear();
-        var skillName = $("input[name='skills']:checked").serializeArray();
-        if(fname == "") {
-            document.getElementById("errorMsg").innerHTML = "Enter Your First Name";
-            return false;
-        } else if(lname == "") {
-            document.getElementById("errorMsg").innerHTML = "Enter Your Last Name";
-            return false;
-        } else if(email == "") {
-            document.getElementById("errorMsg").innerHTML = "Enter Your Email ID";
-            return false;
-        } else if(!validateEmail(email)) {
-            document.getElementById("errorMsg").innerHTML = "Enter Valid Email ID";
-            return false;
-        } else if(mobile == "" || mobile.length < 1) {
-            document.getElementById("errorMsg").innerHTML = "Enter Your Contact Number";
-            return false;
-        } else if(mobile.length < 10) {
-            document.getElementById("errorMsg").innerHTML = "Enter Your Valid Contact Number";
-            return false;
-        } else if(ipYear > currYear) {
-            document.getElementById("errorMsg").innerHTML = "Enter Valid Date of Birth";
-            return false;
-        } else if((currYear - ipYear) <= 18) {
-            document.getElementById("errorMsg").innerHTML = "You are too Young to Work";
-            return false;
-        } else if((ipYear - currYear) >= 110) {
-            document.getElementById("errorMsg").innerHTML = "You are too Old to Work";
-            return false;
-        } else if(skill1.checked == false && skill2.checked == false && skill3.checked == false && other.checked == false) {
-            document.getElementById("errorMsg").innerHTML = "Slect one Skill";
-            return false;
-        } else if(other.checked == true && otherSkill == "") {
-            document.getElementById("errorMsg").innerHTML = "Please mention you Other Skill";
-            return false;
-        } else if(address == "") {
-            document.getElementById("errorMsg").innerHTML = "Enter Your Address";
-            return false;
-        } else {
-            document.getElementById("errorMsg").innerHTML = "Profile Updated Successful.";
-            document.getElementById("errorMsg").style.color = "green";
-            setTimeout(function() {
-                $('#errorMsg').fadeOut('fast');
-            }, 2000);
+        function profileValidate() {
+            var fname = $('#fname').val();
+            var lname = $('#lname').val();
+            var mobile = $('#mobile').val();
+            var email = $('#email').val();
+            var dob = $('#dob').val();
+            var otherSkill = $('#custom_skill_value').val();
+            var address = $('#address').val();
+            var dateValue = (new Date(dob));
+            var ipYear = dateValue.getFullYear();
+            var currYear = new Date().getFullYear();
+            var skillName = $("input[name='skills']:checked").serializeArray();
+            if (fname == "") {
+                document.getElementById("errorMsg").innerHTML = "Enter Your First Name";
+                return false;
+            } else if (lname == "") {
+                document.getElementById("errorMsg").innerHTML = "Enter Your Last Name";
+                return false;
+            } else if (email == "") {
+                document.getElementById("errorMsg").innerHTML = "Enter Your Email ID";
+                return false;
+            } else if (!validateEmail(email)) {
+                document.getElementById("errorMsg").innerHTML = "Enter Valid Email ID";
+                return false;
+            } else if (mobile == "" || mobile.length < 1) {
+                document.getElementById("errorMsg").innerHTML = "Enter Your Contact Number";
+                return false;
+            } else if (mobile.length < 10) {
+                document.getElementById("errorMsg").innerHTML = "Enter Your Valid Contact Number";
+                return false;
+            } else if (ipYear > currYear) {
+                document.getElementById("errorMsg").innerHTML = "Enter Valid Date of Birth";
+                return false;
+            } else if ((currYear - ipYear) <= 18) {
+                document.getElementById("errorMsg").innerHTML = "You are too Young to Work";
+                return false;
+            } else if ((ipYear - currYear) >= 110) {
+                document.getElementById("errorMsg").innerHTML = "You are too Old to Work";
+                return false;
+            } else if (skill1.checked == false && skill2.checked == false && skill3.checked == false && other.checked == false) {
+                document.getElementById("errorMsg").innerHTML = "Slect one Skill";
+                return false;
+            } else if (other.checked == true && otherSkill == "") {
+                document.getElementById("errorMsg").innerHTML = "Please mention you Other Skill";
+                return false;
+            } else if (address == "") {
+                document.getElementById("errorMsg").innerHTML = "Enter Your Address";
+                return false;
+            } else {
+                document.getElementById("errorMsg").innerHTML = "Profile Updated Successful.";
+                document.getElementById("errorMsg").style.color = "green";
+                setTimeout(function() {
+                    $('#errorMsg').fadeOut('fast');
+                }, 2000);
+            }
         }
-    }
-    //form field validation End
-    //image thumbnail Start
-    pphoto.onchange = function(evt) {
-        const [file] = pphoto.files
-        if(file) {
-            updatedProfileImage.src = URL.createObjectURL(file);
+        //form field validation End
+        //image thumbnail Start
+        pphoto.onchange = function(evt) {
+            const [file] = pphoto.files
+            if (file) {
+                updatedProfileImage.src = URL.createObjectURL(file);
+            }
         }
-    }
-    var src = $('.pphoto_file img').attr('src');
-    var arr = src.split('/');
-    var file = arr[arr.length - 1];
-    var name = file.split('.')[0];
-    $('#file_val').text(file);
-    $('#chng_pphoto').click(function() {
-        $("input[type='file']").trigger('click');
-    });
-    $("input[type='file']").change(function(e) {
-        $('#file_val').text(this.value.replace(/C:\\fakepath\\/i, ''));
-        var filePath = $(this).val();
-        var filename = $(e.currentTarget).val().replace(/^.*\\/, "");
-        $('.pphoto_file img').attr('src', updatedProfileImage.src);
-    });
-    //image thumbnail End
+        var src = $('.pphoto_file img').attr('src');
+        var arr = src.split('/');
+        var file = arr[arr.length - 1];
+        var name = file.split('.')[0];
+        $('#file_val').text(file);
+        $('#chng_pphoto').click(function() {
+            $("input[type='file']").trigger('click');
+        });
+        $("input[type='file']").change(function(e) {
+            $('#file_val').text(this.value.replace(/C:\\fakepath\\/i, ''));
+            var filePath = $(this).val();
+            var filename = $(e.currentTarget).val().replace(/^.*\\/, "");
+            $('.pphoto_file img').attr('src', updatedProfileImage.src);
+        });
+        //image thumbnail End
     </script>
 </body>
 

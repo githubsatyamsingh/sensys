@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Sensys | Employee Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if(charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+    function validateEmail(email) {
+        return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(email);
+    }
+    </script>
+</head>
+
+<body>
+    <div class="sidemenu">
+        <input type="checkbox" id="btn" hidden>
+        <label for="btn" class="menu-btn"> <i class="fa fa-bars"></i> <i class="fa fa-times"></i> </label>
+        <nav id="sidebar">
+            <div class="title"> Side Menu </div>
+            <ul class="list-items">
+                <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                <div class="logout_btn_div"> <a href="#"><i class="fa fa-sign-out"></i> Logout </a> </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="emp_list emp_profile_details">
+        <div class="emp_thumbnail">
+            <div class="emp_container">
+                <div class="bg_shape"> <img class="round" src="https://randomuser.me/api/portraits/men/1.jpg" alt="user" /> </div>
+                <div class="image"> <img class="round" src="https://randomuser.me/api/portraits/men/1.jpg" alt="user" /> </div>
+                <h3 class="emp_name">Satyam Singh</h3>
+                <p class="heading_small_two"> <span>01 January 2000</span> <span>Male</span> </p>
+                <div class="skills profile_skills">
+                    <h5 class="heading_small">Skills</h5>
+                    <ul>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>C#</li>
+                        <li>JavaScript</li>
+                        <li>Angular JS</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="emp_contact"><a href="tel:+91 0123 456 789">+91 0123 456 789</a> <a href="mailto:satyam@gmail.com">satyam@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="emp_thumbnail">
+            <div class="emp_container">
+                <form class="emp_profile_field">
+                    <div class="ip_field_1">
+                        <label>First name:</label>
+                        <input type="text" id="fname" name="fname" value="Satyam"> </div>
+                    <div class="ip_field_2">
+                        <label>Last name:</label>
+                        <input type="text" id="lname" name="lname" value="Singh"> </div>
+                    <div class="ip_field_3">
+                        <label>Email:</label>
+                        <input type="email" id="email" name="email" value="satyam@gmail.com"> </div>
+                    <div class="ip_field_4">
+                        <label>Mobile:</label>
+                        <input type="text" id="mobile" maxlength="10" name="mobile" value="0123456789" onKeyPress="return isNumber(event)"> </div>
+                    <div class="ip_field_5">
+                        <label>Profile Photo:</label>
+                        <div class="pphoto_file">
+                            <div class="image"> <img id="updatedProfileImage" class="round" src="https://randomuser.me/api/portraits/men/1.jpg" alt="user"> </div>
+                            <div class="file_btn">
+                                <input accept="image/*" type="file" id="pphoto" name="pphoto"> <span id='file_val'></span> <span id='chng_pphoto'>Change Profile Photo</span> </div>
+                        </div>
+                    </div>
+                    <div class="ip_field_6 custom_calender_icon">
+                        <label>Date of Birth:</label>
+                        <input type="date" id="dob" value="2002-01-01"> </div>
+                    <div class="ip_field_7">
+                        <label>Gender:</label>
+                        <div class="custom_input_div custom_radio_field">
+                            <div>
+                                <label class="custom_inputbox">Male
+                                    <input type="radio" name="gender" checked /> <span class="checkmark"></span> </label>
+                            </div>
+                            <div>
+                                <label class="custom_inputbox">Female
+                                    <input type="radio" name="gender" /> <span class="checkmark"></span> </label>
+                            </div>
+                            <div>
+                                <label class="custom_inputbox">Other
+                                    <input type="radio" name="gender" /> <span class="checkmark"></span> </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ip_field_8">
+                        <label>Address:</label>
+                        <textarea id="address" name="address">Malad, Mumbai, Maharstra, India</textarea>
+                    </div>
+                    <div class="ip_field_9">
+                        <label>Skills:</label>
+                        <div class="custom_input_div custom_checkbox_field">
+                            <div>
+                                <label class="custom_inputbox">Java
+                                    <input type="checkbox" id="skill1" name="skills" value="Java" checked> <span class="checkmark"></span> </label>
+                            </div>
+                            <div>
+                                <label class="custom_inputbox">c++
+                                    <input type="checkbox" id="skill2" name="skills" value="C++" checked> <span class="checkmark"></span> </label>
+                            </div>
+                            <div>
+                                <label class="custom_inputbox">html
+                                    <input type="checkbox" id="skill3" name="skills" value="html" checked> <span class="checkmark"></span> </label>
+                            </div>
+                            <div>
+                                <label class="custom_inputbox">Other
+                                    <input type="checkbox" id="other" class="other_skill" name="skills" value="Other" onchange="valueChanged()" checked> <span class="checkmark"></span> </label>
+                            </div>
+                            <div class="custom_box">
+                                <label>Other Skills</label>
+                                <input type="text" id="custom_skill_value" value="C#,React JS,MongoDB" /> <small>Keep seperate with comma(,) if you add multiple skills </small> </div>
+                        </div>
+                    </div>
+                    <div class="ip_field_10">
+                        <input type="button" class="btnUpdate" id="btnSubmit" onclick="profileValidate()" value="Update Now"> <span id="errorMsg"></span> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    //form field validation Start          
+    function valueChanged() {
+        if($('.other_skill').is(":checked")) $(".custom_box").show();
+        else $(".custom_box").hide();
+        $('#custom_skill_value').val("");
+    }
+
+    function profileValidate() { 
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var mobile = $('#mobile').val();
+        var email = $('#email').val();
+        var dob = $('#dob').val();
+        var otherSkill = $('#custom_skill_value').val();
+        var address = $('#address').val();
+        var dateValue = (new Date(dob));
+        var ipYear = dateValue.getFullYear();
+        var currYear = new Date().getFullYear();
+        var skillName = $("input[name='skills']:checked").serializeArray();
+        if(fname == "") {
+            document.getElementById("errorMsg").innerHTML = "Enter Your First Name";
+            return false;
+        } else if(lname == "") {
+            document.getElementById("errorMsg").innerHTML = "Enter Your Last Name";
+            return false;
+        } else if(email == "") {
+            document.getElementById("errorMsg").innerHTML = "Enter Your Email ID";
+            return false;
+        } else if(!validateEmail(email)) {
+            document.getElementById("errorMsg").innerHTML = "Enter Valid Email ID";
+            return false;
+        } else if(mobile == "" || mobile.length < 1) {
+            document.getElementById("errorMsg").innerHTML = "Enter Your Contact Number";
+            return false;
+        } else if(mobile.length < 10) {
+            document.getElementById("errorMsg").innerHTML = "Enter Your Valid Contact Number";
+            return false;
+        } else if(ipYear > currYear) {
+            document.getElementById("errorMsg").innerHTML = "Enter Valid Date of Birth";
+            return false;
+        } else if((currYear - ipYear) <= 18) {
+            document.getElementById("errorMsg").innerHTML = "You are too Young to Work";
+            return false;
+        } else if((ipYear - currYear) >= 110) {
+            document.getElementById("errorMsg").innerHTML = "You are too Old to Work";
+            return false;
+        } else if(skill1.checked == false && skill2.checked == false && skill3.checked == false && other.checked == false) {
+            document.getElementById("errorMsg").innerHTML = "Slect one Skill";
+            return false;
+        } else if(other.checked == true && otherSkill == "") {
+            document.getElementById("errorMsg").innerHTML = "Please mention you Other Skill";
+            return false;
+        } else if(address == "") {
+            document.getElementById("errorMsg").innerHTML = "Enter Your Address";
+            return false;
+        } else {
+            document.getElementById("errorMsg").innerHTML = "Profile Updated Successful.";
+            document.getElementById("errorMsg").style.color = "green";
+            setTimeout(function() {
+                $('#errorMsg').fadeOut('fast');
+            }, 2000);
+        }
+    }
+    //form field validation End
+    //image thumbnail Start
+    pphoto.onchange = function(evt) {
+        const [file] = pphoto.files
+        if(file) {
+            updatedProfileImage.src = URL.createObjectURL(file);
+        }
+    }
+    var src = $('.pphoto_file img').attr('src');
+    var arr = src.split('/');
+    var file = arr[arr.length - 1];
+    var name = file.split('.')[0];
+    $('#file_val').text(file);
+    $('#chng_pphoto').click(function() {
+        $("input[type='file']").trigger('click');
+    });
+    $("input[type='file']").change(function(e) {
+        $('#file_val').text(this.value.replace(/C:\\fakepath\\/i, ''));
+        var filePath = $(this).val();
+        var filename = $(e.currentTarget).val().replace(/^.*\\/, "");
+        $('.pphoto_file img').attr('src', updatedProfileImage.src);
+    });
+    //image thumbnail End
+    </script>
+</body>
+
+</html>

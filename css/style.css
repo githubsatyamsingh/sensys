@@ -332,9 +332,11 @@ h3 {
 .profile_skills {
     margin-top: 25px;
 }
-.profile_skills .heading_small{
-margin-top: 5px;
+
+.profile_skills .heading_small {
+    margin-top: 5px;
 }
+
 .skills button {
     padding: 10px 15px;
     background: rgb(28 28 28);
@@ -494,9 +496,11 @@ grid-row-end: 5; */
     -ms-user-select: none;
     user-select: none;
 }
-.custom_input_div label.custom_inputbox{
+
+.custom_input_div label.custom_inputbox {
     font-weight: 500;
 }
+
 .custom_radio_field .custom_inputbox {
     padding-left: 25px;
     margin: 0;
@@ -681,7 +685,7 @@ input[type="file" i]::-webkit-file-upload-button {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-      opacity: 0;
+    opacity: 0;
     position: absolute;
     right: 19px;
     z-index: 1;
@@ -711,7 +715,8 @@ input[type="date"]:after {
     position: relative;
 }
 
-.emp_profile_field input[type="submit"],.emp_profile_field input[type="button"],
+.emp_profile_field input[type="submit"],
+.emp_profile_field input[type="button"],
 button {
     background: #6c6868;
     padding: 10px;
@@ -737,9 +742,11 @@ button {
     width: 100%;
     margin: 5px 0;
 }
-.none{
+
+.none {
     display: none;
 }
+
 @media (max-width:1229px) {
     .ip_field_10 {
         grid-column-start: 2;
@@ -759,13 +766,12 @@ button {
 }
 
 @media (max-width:909px) {
-    
     .emp_profile_field {
         grid-template-columns: repeat(auto-fit, minmax(220px, calc(50% - 00px)));
-    }.custom_radio_field .custom_inputbox {
-    
-    font-size: 14px;
-}
+    }
+    .custom_radio_field .custom_inputbox {
+        font-size: 14px;
+    }
 }
 
 @media (max-width:829px) {
@@ -773,7 +779,6 @@ button {
         grid-column: auto;
         grid-row: auto;
     }
-    
     .ip_field_10 {
         grid-column: auto;
         grid-row: unset;
@@ -792,5 +797,15 @@ button {
 @media (max-width:629px) {
     .emp_profile_details .emp_thumbnail:last-child {
         grid-column: unset;
+    }
+}
+
+@media (max-width:375px) {
+    .emp_list {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 350px));
+    }
+    .emp_thumbnail {
+        padding: 0;
+        margin: 15px 0;
     }
 }

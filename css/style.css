@@ -800,7 +800,7 @@ button {
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:300px) {
     .emp_list {
         grid-template-columns: repeat(auto-fit, minmax(100%, 350px));
     }
